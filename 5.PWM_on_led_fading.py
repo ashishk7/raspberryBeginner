@@ -7,14 +7,12 @@ x=GPIO.PWM(11,100)
 x.ChangeFrequency(100)
 x.start(0)
 while(1):
-        for i in range(0,100):
+        for i in range(0,100,1):
                 x.ChangeDutyCycle(i)
-                i=i+5
-                time.sleep(.05)
-        for j in range(100,0):
+                time.sleep(.04)
+        for j in range(100,0,-1):
                 x.ChangeDutyCycle(j)
-                j=j-1
-                time.sleep(0.05)
+                time.sleep(0.04)
 
 x.stop()
 GPIO.cleanup()
